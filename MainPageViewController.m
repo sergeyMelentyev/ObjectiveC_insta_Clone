@@ -6,8 +6,12 @@
 //  Copyright © 2016 Melentyev. All rights reserved.
 //
 
-#import "mainPageViewController.h"
+#import "MainPageViewController.h"
 
-@implementation mainPageViewController
+@interface MainPageViewController()
+
+@end
+
+@implementation MainPageViewController
 
 @end

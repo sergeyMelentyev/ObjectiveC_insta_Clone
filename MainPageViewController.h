@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface mainPageViewController : UIViewController
+@interface MainPageViewController : UIViewController
 
 @end
