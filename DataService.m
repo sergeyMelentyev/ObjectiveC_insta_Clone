@@ -7,11 +7,12 @@
 //
 
 #import "DataService.h"
-#import "FireBase.h"
 
 @implementation DataService
+
 + (id) initWithUrl {
     Firebase *refBase = [[Firebase alloc] initWithUrl:@"https://objectivec-insta-app.firebaseio.com"];
     return refBase;
 }
+
 @end

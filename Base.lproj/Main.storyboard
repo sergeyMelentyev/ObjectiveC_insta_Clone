@@ -103,7 +103,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="HMe-1p-Kpx"/>
@@ -118,7 +118,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Ehc-Z4-vO6"/>
@@ -231,10 +231,33 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="emailAdress" destination="JL6-XE-gsV" id="Nqo-a9-hE1"/>
+                        <outlet property="emailPassword" destination="NmX-pq-VH9" id="QGo-pN-0c9"/>
+                        <segue destination="64U-6w-jzF" kind="show" identifier="loggedIn" id="Xg6-Jx-A4h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqB-Rg-VoC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="538" y="396"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="o20-yJ-TKh">
+            <objects>
+                <viewController id="64U-6w-jzF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UL2-d3-DR0"/>
+                        <viewControllerLayoutGuide type="bottom" id="0il-NM-a2V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lyS-TB-R87">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrT-ET-dl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1221" y="396"/>
         </scene>
     </scenes>
     <resources>

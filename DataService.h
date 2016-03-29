@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FireBase.h"
 
 @interface DataService : NSObject
 @property (nonatomic, strong) DataService *ds;

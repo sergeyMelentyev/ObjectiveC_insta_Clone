@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataService.h"
+#import "FireBase.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface MainPageViewController : UIViewController
 
