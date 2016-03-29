@@ -1,5 +1,5 @@
 //
-//  MainPageViewController.h
+//  feedCellViewController.h
 //  ObjectiveC_insta_Clone
 //
 //  Created by Админ on 29.03.16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface feedCellViewController : UITableViewCell
 
 @end

@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Main Page View Controller-->
+        <!--Login Page View Controller-->
         <scene sceneID="LFa-ju-bLz">
             <objects>
-                <viewController id="Wjh-eL-agh" customClass="MainPageViewController" sceneMemberID="viewController">
+                <viewController id="Wjh-eL-agh" customClass="LoginPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0yU-hj-kTX"/>
                         <viewControllerLayoutGuide type="bottom" id="MBp-DB-OYs"/>
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="538" y="396"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Page View Controller-->
         <scene sceneID="o20-yJ-TKh">
             <objects>
-                <viewController id="64U-6w-jzF" sceneMemberID="viewController">
+                <viewController id="64U-6w-jzF" customClass="MainPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UL2-d3-DR0"/>
                         <viewControllerLayoutGuide type="bottom" id="0il-NM-a2V"/>
