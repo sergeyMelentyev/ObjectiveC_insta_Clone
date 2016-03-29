@@ -9,12 +9,10 @@
 #import "LoginPageViewController.h"
 
 @interface LoginPageViewController()
-
 @property (weak, nonatomic) IBOutlet UITextField *emailAdress;
 @property (weak, nonatomic) IBOutlet UITextField *emailPassword;
 - (IBAction)facebookButtonPressed:(id)sender;
 - (IBAction)emailButtonPressed:(id)sender;
-
 @end
 
 @implementation LoginPageViewController

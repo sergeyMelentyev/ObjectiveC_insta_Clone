@@ -9,23 +9,18 @@
 #import "MainPageViewController.h"
 
 @interface MainPageViewController()
-
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation MainPageViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
-- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
-- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
+#pragma mark - Table View Constructor
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -33,6 +28,10 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
 }
 
 @end
