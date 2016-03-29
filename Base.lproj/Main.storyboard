@@ -59,6 +59,9 @@
                                         <state key="normal" title="Facebook Login">
                                             <color key="titleColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="facebookButtonPressed:" destination="Wjh-eL-agh" eventType="touchUpInside" id="5hF-qk-e66"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -152,6 +155,9 @@
                                                 <exclude reference="xKD-te-apz"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="emailButtonPressed:" destination="Wjh-eL-agh" eventType="touchUpInside" id="RSQ-6V-Dha"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
