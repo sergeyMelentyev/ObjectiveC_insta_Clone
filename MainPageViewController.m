@@ -65,7 +65,7 @@
             if (error.code == -8) {
                 [self createNewUserAlertWithTitle:@"Create new user?" message:[NSString stringWithFormat:@"User %@ does not exist", self.emailAdress.text] address:self.emailAdress.text password:self.emailPassword.text];
             } else if (error.code == -6) {
-                [self showErrorAlertWithTitle:@"Cannot login" message:@"Password is incorrect"];
+                [self showErrorAlertWithTitle:@"Could not login" message:@"Password is incorrect"];
                 self.emailPassword.text = @"";
             } else {
                 [[NSUserDefaults standardUserDefaults] setValue:authData.uid forKey:@"uid"];
@@ -75,8 +75,9 @@
     }
 }
 
-#pragma mark - Alert action section
+#pragma mark - Alert section
 
+// Error alert function with one action
 - (void) showErrorAlertWithTitle: (NSString*)title message:(NSString*)msg {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
@@ -84,6 +85,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+// Create new user alert with two actions
 - (void) createNewUserAlertWithTitle: (NSString*)title message:(NSString*)msg address:(NSString*)address password:(NSString*)pass {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *addAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -98,6 +100,9 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+#pragma mark - Add new user to the Base
+
+// Add new user to the Firebase
 - (void) addNewUserAddress: (NSString*)address password:(NSString*)pass {
     [[DataService initWithUrl] createUser:address password:pass withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
         if (error != nil) {
