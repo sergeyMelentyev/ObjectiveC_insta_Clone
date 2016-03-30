@@ -20,11 +20,6 @@
     return refBasePosts;
 }
 
-+ (id) initWithUrlUsers {
-    Firebase *refBaseUsers = [[Firebase alloc] initWithUrl:@"https://objectivec-insta-app.firebaseio.com/users"];
-    return refBaseUsers;
-}
-
 + (void) creatNewUserAccountWithUID: (NSString*)uid userName:(NSDictionary*)user {
     Firebase *newUser = [[[Firebase alloc] initWithUrl:@"https://objectivec-insta-app.firebaseio.com/users"] childByAppendingPath:uid];
     [newUser setValue:user];

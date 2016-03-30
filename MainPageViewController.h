@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataService.h"
+#import "FireBase.h"
 
 @interface MainPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

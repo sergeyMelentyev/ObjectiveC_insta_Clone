@@ -18,6 +18,9 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [[DataService initWithUrlPosts] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Table View Constructor
