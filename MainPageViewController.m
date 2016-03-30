@@ -10,6 +10,7 @@
 
 @interface MainPageViewController()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSArray *arrayOfPostsFromServer;
 @end
 
 @implementation MainPageViewController
@@ -18,7 +19,31 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    NSMutableArray *internalArrayOfPosts = [[NSMutableArray alloc] init];
     [[DataService initWithUrlPosts] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        for (FDataSnapshot* snap in snapshot.children) {
+            Post *post = [[Post alloc] init];
+            NSDictionary *description = [snap.value objectForKey:@"description"];
+            if (description) {
+                post.postDescription = [NSString stringWithFormat:@"%@", description];
+            } else {
+                post.postDescription = @"";
+            }
+            NSDictionary *imageUrl = [snap.value objectForKey:@"imageUrl"];
+            if (imageUrl) {
+                post.imageUrl = [NSString stringWithFormat:@"%@", imageUrl];
+            } else {
+                post.imageUrl = @"";
+            }
+            NSDictionary *likes = [snap.value objectForKey:@"likes"];
+            if (likes) {
+                post.likes = (NSNumber*)[NSString stringWithFormat:@"%@", likes];
+            } else {
+                post.likes = 0;
+            }
+            [internalArrayOfPosts addObject:post];
+        }
+        self.arrayOfPostsFromServer = internalArrayOfPosts;
         [self.tableView reloadData];
     }];
 }

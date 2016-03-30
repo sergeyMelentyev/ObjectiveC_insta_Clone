@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataService.h"
 #import "FireBase.h"
+#import "Post.h"
 
 @interface MainPageViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
