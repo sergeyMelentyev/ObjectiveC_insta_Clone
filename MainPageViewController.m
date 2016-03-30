@@ -21,6 +21,7 @@
     self.tableView.dataSource = self;
     NSMutableArray *internalArrayOfPosts = [[NSMutableArray alloc] init];
     [[DataService initWithUrlPosts] observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [internalArrayOfPosts removeAllObjects];
         for (FDataSnapshot* snap in snapshot.children) {
             Post *post = [[Post alloc] init];
             NSDictionary *description = [snap.value objectForKey:@"description"];
@@ -55,11 +56,15 @@
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.arrayOfPostsFromServer.count;
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
+    FeedCellViewController *cell = (FeedCellViewController*)[tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
+    if (!cell) {
+        cell = [[FeedCellViewController alloc] init];
+    }
+    return cell;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FeedCellViewController.h"
 #import "DataService.h"
 #import "FireBase.h"
 #import "Post.h"
