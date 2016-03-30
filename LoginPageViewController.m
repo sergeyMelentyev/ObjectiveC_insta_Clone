@@ -45,6 +45,12 @@
                     NSLog(@"Facebook login Error: %@", error);
                 } else {
                     NSLog(@"Facebook login success");
+                    
+                    // ADD NEW FB USER
+                    NSDictionary *user = [NSDictionary dictionaryWithObject:authData.provider forKey:@"provider"];
+                    [DataService creatNewUserAccountWithUID:authData.uid userName:user];
+                    
+                    // SAVE UID FOR AUTOLOGIN NEXT TIME
                     [[NSUserDefaults standardUserDefaults] setValue:authData.uid forKey:@"uid"];
                     [self performSegueWithIdentifier:@"loggedIn" sender:nil];
                 }
@@ -66,7 +72,7 @@
                 [self showErrorAlertWithTitle:@"Could not login" message:@"Password is incorrect"];
                 self.emailPassword.text = @"";
             } else {
-                [[NSUserDefaults standardUserDefaults] setValue:authData.uid forKey:@"uid"];
+                // [[NSUserDefaults standardUserDefaults] setValue:authData.uid forKey:@"uid"];
                 [self performSegueWithIdentifier:@"loggedIn" sender:nil];
             }
         }];
@@ -106,6 +112,11 @@
         if (error != nil) {
             [self showErrorAlertWithTitle:@"Could not create account" message:@"Preblem creating account"];
         } else {
+            // ADD NEW EMAIL USER
+            NSDictionary *user = [NSDictionary dictionaryWithObject:@"email" forKey:@"provider"];
+            [DataService creatNewUserAccountWithUID:[result objectForKey:@"uid"] userName:user];
+            
+            // SAVE UID FOR AUTOLOGIN NEXT TIME
             [[NSUserDefaults standardUserDefaults] setValue:[result objectForKey:@"uid"] forKey:@"uid"];
             [self performSegueWithIdentifier:@"loggedIn" sender:nil];
         }

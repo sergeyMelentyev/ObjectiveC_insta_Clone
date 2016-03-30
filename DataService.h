@@ -12,4 +12,7 @@
 @interface DataService : NSObject
 @property (nonatomic, strong) DataService *ds;
 + (id) initWithUrl;
++ (id) initWithUrlPosts;
++ (id) initWithUrlUsers;
++ (void) creatNewUserAccountWithUID: (NSString*)uid userName:(NSDictionary*)user;
 @end

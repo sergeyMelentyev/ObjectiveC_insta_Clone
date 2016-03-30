@@ -141,7 +141,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="HMe-1p-Kpx"/>
@@ -156,7 +156,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Ehc-Z4-vO6"/>
