@@ -15,5 +15,6 @@
 @property (nonatomic, strong) NSString *imageUrl;
 @property (nonatomic, strong) NSString *postKey;
 @property (nonatomic, strong) NSNumber *likes;
+@property (nonatomic, strong) NSData *imageData;
 
 @end

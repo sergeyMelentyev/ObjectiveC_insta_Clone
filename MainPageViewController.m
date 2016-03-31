@@ -60,7 +60,6 @@
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     Post *post = [self.arrayOfPostsFromServer objectAtIndex:indexPath.row];
     FeedCellViewController *cell = (FeedCellViewController*)[tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
     [cell configureCell:post];
