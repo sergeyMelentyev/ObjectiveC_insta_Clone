@@ -13,10 +13,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *profileName;
 @property (weak, nonatomic) IBOutlet UIImageView *feedMainImg;
 @property (weak, nonatomic) IBOutlet UILabel *likeCounter;
+@property (weak, nonatomic) IBOutlet UILabel *feedText;
 
 @end
 
 @implementation FeedCellViewController
+
+// UPGRADE CONTENT OF EACH CELL
+- (void) configureCell:(nonnull Post*) post {
+    self.feedText.text = post.postDescription;
+    self.likeCounter.text = [NSString stringWithFormat:@"%@", post.likes];
+}
 
 - (void) awakeFromNib {
     [super awakeFromNib];

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 @interface FeedCellViewController : UITableViewCell
-
+- (void) configureCell:(nonnull Post*) post;
 @end

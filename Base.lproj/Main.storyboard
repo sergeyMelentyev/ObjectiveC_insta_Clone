@@ -435,6 +435,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="feedMainImg" destination="qX5-Wt-ewC" id="vaT-N2-0zM"/>
+                                            <outlet property="feedText" destination="fye-3I-xsu" id="HF9-Q5-WC8"/>
                                             <outlet property="likeCounter" destination="Zd1-Hn-9gn" id="Pgv-4V-frS"/>
                                             <outlet property="profileImg" destination="Dho-nL-hfs" id="YJN-hI-GiZ"/>
                                             <outlet property="profileName" destination="0Nb-a4-bTy" id="Q9u-4b-oLt"/>
