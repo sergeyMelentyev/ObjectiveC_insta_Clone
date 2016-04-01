@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *feedMainImg;
 @property (weak, nonatomic) IBOutlet UILabel *likeCounter;
 @property (weak, nonatomic) IBOutlet UILabel *feedText;
-
 @end
 
 @implementation FeedCellViewController

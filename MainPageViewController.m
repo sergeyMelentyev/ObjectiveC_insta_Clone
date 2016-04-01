@@ -11,6 +11,7 @@
 @interface MainPageViewController()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *arrayOfPostsFromServer;
+- (IBAction)addNewPost:(UIBarButtonItem *)sender;
 @end
 
 @implementation MainPageViewController
@@ -51,10 +52,6 @@
 
 #pragma mark - Table View Constructor
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-}
-
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPostsFromServer.count;
 }
@@ -64,6 +61,29 @@
     FeedCellViewController *cell = (FeedCellViewController*)[tableView dequeueReusableCellWithIdentifier:@"FeedCell"];
     [cell configureCell:post];
     return cell;
+}
+
+- (IBAction)addNewPost:(UIBarButtonItem *)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"New post" message:@"What would you like to post?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *addImg = [UIAlertAction actionWithTitle:@"Add photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"CHOOSE A PHOTO");
+    }];
+    UIAlertAction *addAction = [UIAlertAction actionWithTitle:@"Share" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"NEW POST");
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDestructive handler:nil];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Write a caption...";
+        textField.layer.cornerRadius = 5.0;
+    }];
+    [alert addAction:addImg];
+    [alert addAction:addAction];
+    [alert addAction:cancelAction];
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
